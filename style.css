@@ -1,0 +1,28 @@
+
+
+.cztery
+{
+	float: left;
+	width: 25%;
+	
+}
+
+.trzy 
+{
+	float: left;
+	width: 33%;
+}
+
+
+.czteryy
+{
+	float: left;
+	width: 25%;
+	text-align: center ;
+}
+
+body
+{
+	background-color: black ;
+	color: white;
+}
