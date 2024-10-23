@@ -3,3 +3,12 @@ body
 	background-color: black ;
 	color: white;
 }
+
+.dwa
+{
+	float: left ;
+}
+.reset
+{
+	clear: both ;
+}
