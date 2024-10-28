@@ -1,0 +1,51 @@
+body
+{
+	background-color: black ;
+	color: white;
+}
+.cztery
+{
+	float: left ;
+	width: 10% ;
+	text-align: center;
+	background-color: gray ;
+	border-width: 1px;
+    border-style: solid;
+    border-color: white;
+	height: 10vh;
+	
+}
+.cztery:hover
+{
+	background-color: silver ;
+}
+
+.linia
+{
+	clear: both ;
+	
+}
+#rownasie
+{
+	background-color: blue;
+}
+#rownasie:hover
+{
+	background-color: DodgerBlue ;
+}
+#wyswietlacz
+{
+	width: 40.5% ;
+	 
+	height: 20vh;
+	
+}
+p 
+{
+	font-size: 30px;
+}
+#tekst
+{
+	font-size: 70px;
+	text-align: right ;
+}

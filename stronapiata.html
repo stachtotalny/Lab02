@@ -1,0 +1,143 @@
+<!DOCTYPE HTML>
+<html lang="pl">
+	<head>
+		<meta charset="utf-8"/>
+		<link rel="stylesheet" href="styleee.css"/>
+	</head>
+	
+	
+	<body>
+		
+		<div id="wyswietlacz">
+			<p id="tekst">
+				
+			</p>
+		</div>
+		<div class="linia">
+			<div class="cztery" onclick="wypisz('7')" >
+				<p>
+					7
+				</p>
+			</div>
+			<div class="cztery" onclick="wypisz('8')" >
+				<p>
+					8
+				</p>
+			</div>
+			<div class="cztery" onclick="wypisz('9')">
+				<p>
+					9
+				</p>
+			</div>
+			<div class="cztery" onclick="wypisz('*')">
+				<p>
+					*
+				</p>
+			</div>
+		</div>
+		<div class="linia">
+			<div class="cztery" onclick="wypisz('4')">
+				<p>
+					4
+				</p>
+			</div>
+			<div class="cztery" onclick="wypisz('5')">
+				<p>
+					5
+				</p>
+			</div>
+			<div class="cztery" onclick="wypisz('6')">
+				<p>
+					6
+				</p>
+			</div>
+			<div class="cztery" onclick="wypisz('/')">
+				<p>
+					/
+				</p>
+			</div>
+		</div>
+		<div class="linia">
+			<div class="cztery" onclick="wypisz('1')">
+				<p>
+					1
+				</p>
+			</div>
+			<div class="cztery" onclick="wypisz('2')">
+				<p>
+					2
+				</p>
+			</div>
+			<div class="cztery" onclick="wypisz('3')">
+				<p>
+					3
+				</p>
+			</div>
+			<div class="cztery" onclick="wypisz('-')">
+				<p>
+					-
+				</p>
+			</div>
+		</div>
+		<div class="linia">
+			<div class="cztery" onclick="wypisz('+')">
+				<p>
+					+
+				</p>
+			</div>
+		<div class="cztery" onclick="wypisz('0')">
+			<p>
+				0
+			</p>
+		</div>
+			<div class="cztery" onclick="wypisz('.')">
+				<p>
+					.					
+				</p>
+			</div>
+			<div class="cztery"  id="rownasie" onclick="policz()" >
+				<p>
+					=
+				</p>
+			</div>
+		</div>
+		<div class="linia">
+			<div class="cztery" onclick="czysc()">
+				<p>
+					c
+				</p>
+			</div>
+		</div>
+		
+		
+		<script type="text/javascript">
+			
+			
+			function wypisz (cyfra)
+			{
+				
+				document.getElementById("tekst").innerHTML += cyfra ;
+			}
+			function czysc()
+			{
+				document.getElementById("tekst").innerHTML = "" ;
+			}
+			function policz()
+			{
+				dzialanie = document.getElementById("tekst").innerHTML ;
+				wynik = eval(dzialanie) ;
+				document.getElementById("tekst").innerHTML = wynik;
+				
+			}
+		</script>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	</body>
+</html>
