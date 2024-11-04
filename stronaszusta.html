@@ -42,7 +42,7 @@
 			}
 			function sprawdzulice(ulica)
 			{
-				var ulicareg = /^[a-zA-ZąćęłńóśżĄĆĘŁŃÓŚŻźŹ\s]{2,50}$/
+				var ulicareg = /^[a-zA-ZąćęłńóśżĄĆĘŁŃÓŚŻźŹ-\s]{2,50}$/
 				if (ulicareg.test(ulica))
 				{
 					return true ;
@@ -88,8 +88,42 @@
 					return false ;
 				}
 			}
-			
-			
+			function sprawdzdom (dom)
+			{
+				if (dom>0)
+				{
+					return true ;
+				}
+				else 
+				{
+					return false;
+				}
+			}
+			function sprawdzmieszkanie (mieszkanie)
+			{
+				if (mieszkanie>0)
+				{
+					return true ;
+				}
+				else 
+				{
+					return false;
+				}
+			}
+			function sprawdzdateurodzenia(data)
+			{
+				var dataurodzenia = new Date(data) ; 
+				var dzisiaj =  new Date ();
+				dzisiaj.setHours(0, 0, 0, 0) ;
+				if (dataurodzenia>dzisiaj)
+				{
+					return false ;
+				}
+				else
+				{
+					return true;
+				}
+			}
 			
 			
 			function sprawdz()
@@ -100,6 +134,11 @@
 				var telefon = document.getElementById("ftelefon").value ;
 				var miasto = document.getElementById("fmiasto").value ;
 				var panstwo = document.getElementById("fpanstwo").value;
+				var dom = document.getElementById("fdom").value;
+				var mieszkanie = document.getElementById("fmieszkanie").value;
+				var dataurodzenia = document.getElementById("fdataurodzenia").value;
+				
+				
 				
 				var blad = false ;
 				if (sprawdzimie(imie) == false)
@@ -114,7 +153,7 @@
 				}
 				if (sprawdzulice(ulica) == false)
 				{
-					alert("Niepoprawne ulica: Ulica nie powinna zawierać cyfr, znaków specjalnych i powinna mieć długość od 2 do 50 znaków") ;
+					alert("Niepoprawne ulica: Ulica nie powinna zawierać cyfr, znaków specjalnych innych niż - i powinna mieć długość od 2 do 50 znaków") ;
 					blad = true ;
 				}
 				if (sprawdztelefon(telefon) == false)
@@ -132,7 +171,21 @@
 					alert("Niepoprawna nazwa państwaa: Nazwa państwa nie powinna zawierać cyfr, znaków specjalnych i powinna mieć długość od 2 do 50 znaków") ;
 					blad = true ;
 				}
-				
+				if (sprawdzdom(dom) == false)
+				{
+					alert("Numer domu nie może być ujemny ani równy zero") ;
+					blad = true ;
+				}
+				if (sprawdzmieszkanie(mieszkanie) == false)
+				{
+					alert("Numer mieszkania nie może być ujemny ani równy zero") ;
+					blad = true ;
+				}
+				if (sprawdzdateurodzenia(dataurodzenia) == false)
+				{
+					alert("Data nie może być większa niż obecna") ;
+					blad = true ;
+				}
 				
 				if (blad==true) 
 				{
