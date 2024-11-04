@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="pl">
+	<head>
+		<meta charset="utf-8"/>
+		<link rel="stylesheet" href="stylee.css"/>
+	
+		
+		
+		
+		
+		
+	</head>
+	
+	
+	
+	<body>
+		<script type="text/javascript">
+			function sprawdzimie (imie)
+			{
+				var imiereg = /^[a-zA-ZąćęłńóśżĄĆĘŁŃÓŚŻźŹ\s]{2,50}$/
+				if (imiereg.test(imie))
+				{
+					return true ;
+				}
+				else 
+				{
+					return false ;
+				}
+				
+			}
+			function sprawdznazwisko(nazwisko)
+			{
+				var nazwiskoreg = /^[a-zA-ZąćęłńóśżĄĆĘŁŃÓŚŻźŹ-\s]{2,50}$/ 
+				if (nazwiskoreg.test(nazwisko))
+				{
+					return true ;
+				}
+				else 
+				{
+					return false ;
+				}
+			}
+			function sprawdzulice(ulica)
+			{
+				var ulicareg = /^[a-zA-ZąćęłńóśżĄĆĘŁŃÓŚŻźŹ\s]{2,50}$/
+				if (ulicareg.test(ulica))
+				{
+					return true ;
+				}
+				else 
+				{
+					return false ;
+				}
+			}
+			function sprawdztelefon(telefon)
+			{
+				var telreg = /^[0-9]{9}$/
+				if (telreg.test(telefon))
+				{
+					return true ;
+				}
+				else 
+				{
+					return false ;
+				}
+			}
+			function sprawdzmiasto (miasto) 
+			{
+				var miastoreg = /^[a-zA-ZąćęłńóśżĄĆĘŁŃÓŚŻźŹ-\s]{2,50}$/
+				if (miastoreg.test(miasto))
+				{
+					return true ;
+				}
+				else 
+				{
+					return false ;
+				}
+			}
+			function sprawdzpanstwo (panstwo) 
+			{
+				var panstworeg = /^[a-zA-ZąćęłńóśżĄĆĘŁŃÓŚŻźŹ\s]{2,50}$/
+				if (panstworeg.test(panstwo))
+				{
+					return true ;
+				}
+				else 
+				{
+					return false ;
+				}
+			}
+			
+			
+			
+			
+			function sprawdz()
+			{
+				var imie = document.getElementById("fimie").value ;
+				var nazwisko = document.getElementById("fnazwisko").value ;
+				var ulica = document.getElementById("fulica").value ;
+				var telefon = document.getElementById("ftelefon").value ;
+				var miasto = document.getElementById("fmiasto").value ;
+				var panstwo = document.getElementById("fpanstwo").value;
+				
+				var blad = false ;
+				if (sprawdzimie(imie) == false)
+				{
+					alert("Niepoprawne imie: Imię nie powinno zawierać cyfr, znaków specjalnych i powinna mieć długość od 2 do 50 znaków") ;
+					blad = true ;
+				}
+				if (sprawdznazwisko(nazwisko) == false)
+				{
+					alert("Niepoprawne nazwisko: Nazwisko nie powinno zawierać cyfr, znaków specjalnych innych niż - i powinna mieć długość od 2 do 50 znaków") ;
+					blad = true ;
+				}
+				if (sprawdzulice(ulica) == false)
+				{
+					alert("Niepoprawne ulica: Ulica nie powinna zawierać cyfr, znaków specjalnych i powinna mieć długość od 2 do 50 znaków") ;
+					blad = true ;
+				}
+				if (sprawdztelefon(telefon) == false)
+				{
+					alert("Niepoprawny numer telefonu: Numer telefonu powinien składać się z 9 cyfr") ;
+					blad = true ;
+				}
+				if (sprawdzmiasto(miasto) == false)
+				{
+					alert("Niepoprawna nazwa miasta: Nazwa miasta nie powinna zawierać cyfr, znaków specjalnych innych niż - i powinna mieć długość od 2 do 50 znaków") ;
+					blad = true ;
+				}
+				if (sprawdzpanstwo(panstwo) == false)
+				{
+					alert("Niepoprawna nazwa państwaa: Nazwa państwa nie powinna zawierać cyfr, znaków specjalnych i powinna mieć długość od 2 do 50 znaków") ;
+					blad = true ;
+				}
+				
+				
+				if (blad==true) 
+				{
+					event.preventDefault(); 
+				} 
+					
+
+    
+			
+			}
+			
+			
+			
+		</script>
+		<form action="actionpage.php" method="get">
+			<div class="reset">
+				<label for="fimie" class ="dwa" >
+					Imię:
+				</label>
+				<input type="text" id="fimie" class ="dwa" required>
+			</div>
+			
+			
+			
+			
+			<div class="reset">
+				<label for="fnazwisko" class="dwa">
+					Nazwisko:
+				</label>
+				<input type="text" id="fnazwisko" class="dwa" required>
+			</div>
+			
+			<div class="reset">
+				<label for="fulica" class="dwa">
+					Ulica:
+				</label>
+			
+				<input type="text" id="fulica" class="dwa" required>
+			</div>
+			
+			
+			
+			<div class="reset">
+				<label for="fdom" class="dwa">
+					Dom:
+				</label>
+			
+				<input type="number" id="fdom" class="dwa" required/>
+			</div>
+			
+			
+			<div class="reset">
+				<label for="fmieszkanie" class="dwa">
+					Mieszkanie:
+				</label>
+			
+				<input type="number" id="fmieszkanie" class="dwa"/>
+			</div>
+			
+			<div class="reset">
+				<label for="ftelefon" class="dwa">
+					Telefon:
+				</label>
+			
+				<input type="tel" id ="ftelefon" class="dwa" required/>
+			</div>
+			
+			<div class="reset"> 
+				<label for="fdataurodzenia" class = "dwa">
+					Data urodzenia
+				</label>
+			
+				<input type="date" id="fdataurodzenia" class="dwa" required/>
+			</div>
+			
+			
+			<div class="reset">
+				<label for="fprawojazdy" class="dwa">
+					Prawo jazdy:
+				</label>
+			
+				<input type="checkbox" id="fprawojazdy" class="dwa"/>
+			</div>
+			
+			<div class="reset">
+				<label for="fhaslo" class="dwa">
+					Hasło:
+				</label>
+			
+			<input type="password" id="fhaslo" class="dwa" required/>
+			</div>
+			<div class="reset">
+			<label for="plec" class="dwa">
+				Płeć:
+			</label>
+			
+			<input type="radio" id="fmenzczyzna" name="plec" value="" class="dwa">
+			<label for="fmenzczyzna" class="dwa">Mężczyzna</label>
+			<input type="radio" id="fkobieta" name="plec" value="" class="dwa">
+			<label for="css" class="dwa">Kobieta</label>
+			<input type="radio" id="finna" name="plec" value="" class="dwa">
+			<label for="finna" class="dwa">Wolę nie podawać</label>
+			
+			</div>
+			
+			<div class="reset">
+				<label for="fmiasto" class="dwa">
+					Miasto:
+				</label>
+			
+				<input type="text" id="fmiasto" class="dwa" required>
+			</div>
+			<div class="reset">
+				<label for="fpanstwo" class="dwa">
+					Państwo:
+				</label>
+			
+				<input type="text" id="fpanstwo" class="dwa" required>
+			</div>
+			<div class="reset">
+				<label for="mejl" class="dwa">
+					Email:
+				</label>
+				<input type="email" id="mejl" class="dwa" required/>
+			</div>
+			
+			<div class="reset">
+				<input type="submit" value="Submit" onclick="sprawdz()">
+			</div>
+		</form>
+		
+		
+		
+		
+		
+		
+	</body>
+</html>
