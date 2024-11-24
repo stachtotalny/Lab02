@@ -1,0 +1,19 @@
+body
+{
+	background-color: black ;
+	color: white;
+}
+
+.dwa
+{
+	float: left ;
+}
+.reset
+{
+	clear: both ;
+}
+label
+{
+	min-width: 130px; 
+}
+
